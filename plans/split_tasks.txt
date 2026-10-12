@@ -1,0 +1,86 @@
+The key idea: split the work
+
+She is a marketer who already does content, PR and social for her clients. Most GEO execution is marketing work. You don't need to do it for her. Your value is the technical and AI layer she can't build herself.
+
+She does (marketing)	                        You do (tech / AI)
+Rewrite content into answer-first format	    Automated GEO audit and monthly monitoring
+PR, guest articles, directory listings	        Prompt libraries and templates her team reuses
+Keep brand messaging consistent	Schema,         llms.txt, robots.txt checks
+Client communication and reporting	            Training her team once, then support
+
+Why it matters for her clients (2 minutes)
+
+Buyers increasingly ask ChatGPT, Perplexity or Google AI Overviews instead of clicking links.
+AI answers cite only 3–5 sources, so being left out means being invisible.
+Her clients probably don't know yet what AI says about them. That's her opening to sell a new service.
+
+2. Live demo (the most convincing part)
+Before the meeting, pick 2–3 of her clients and ask the AI engines the questions their customers would ask. Show her:
+
+Where her clients appear or don't appear
+Which competitors show up instead
+Any wrong facts AI states about them
+
+3. What GEO work involves
+Use the phased plan from before, simplified: audit, make content quotable, build off-site presence, monitor monthly.
+
+4. How you'd work together
+Propose the split above: you provide the tooling and audits, her team handles execution.
+
+Questions to ask her
+How many clients would this cover, and in which industries?
+Does she sell B2B or B2C clients? (B2B tends to gain more from GEO.)
+What does she already deliver: SEO, content, PR, social?
+How does she report results to clients today?
+Does she want to white-label it as her own service?
+
+How to reduce your work
+
+1. Automate the audit (biggest time saver)
+Build a small tool that:
+
+Takes a client's brand name, competitors and a list of 30–50 prompts
+Runs them through the OpenAI, Anthropic, Perplexity and Gemini APIs
+Detects brand mentions, competitor mentions and cited URLs
+Outputs a scored report: share of voice, missing topics, wrong facts
+
+After the first build, each new client is a config file plus one run. 
+Scheduled monthly, it becomes recurring monitoring with no manual work.
+
+2. Build reusable templates
+
+A prompt-list generator per industry (an LLM can draft 50 buyer questions from a client's website)
+A "brand fact sheet" template: the one canonical description used everywhere
+A content-rewrite prompt her team can use to turn existing pages into answer-first format
+A schema and llms.txt generator
+
+3. Train her team once
+A 2-hour session plus a short playbook, so they don't need you for daily execution.
+
+Keep the recurring part as a service, not a handover
+
+Teach the method, keep the machine.
+
+Give away (she can do it herself)	Keep (she keeps needing you)
+Why GEO matters, the overall process	The audit and monitoring tool, run as a hosted service
+How to rewrite content, do PR, get listed	The prompt libraries and scoring logic behind it
+How to read the reports	Monthly updated reports for each client
+She gets a dashboard or report per client. She doesn't get the code or the scripts. Each new client she adds means a new subscription with you.
+
+Why the service keeps its value
+AI engines change constantly. New models, new search features, different citation behavior. Keeping the tool accurate is ongoing technical work her marketing team can't do.
+Monitoring is continuous. Clients need monthly tracking, not a one-time audit.
+Your data compounds. Across many clients and months you build benchmarks ("companies in this industry get cited X% of the time") that she can't reproduce.
+Protect it in the agreement
+Per-client pricing: a setup fee plus a monthly fee for each client on the platform.
+License, not ownership: she uses the tool and the reports; the code, prompts and methods remain yours.
+White-label is fine, since her clients see her brand. That makes her look good and keeps her dependent on your backend.
+Consider a minimum term, e.g. 6 or 12 months per client.
+Accept one thing
+
+A capable agency could eventually build something similar or buy an off-the-shelf GEO tracking tool.
+ Your real protection is making your service cheaper and better than doing it themselves: tailored to her clients, fast to onboard, and with you as the technical expert she can call.
+
+A good way to frame it in the meeting: 
+"Your team runs the marketing, I run the AI intelligence behind it." 
+That positions you as a long-term partner rather than a trainer she outgrows.

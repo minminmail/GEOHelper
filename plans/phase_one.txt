@@ -1,0 +1,53 @@
+If SEO is done, your site is already crawlable, indexed and ranking. 
+GEO work is mostly about three new things: being quotable, being mentioned elsewhere, 
+and measuring what AI actually says about you. Here's what to add, in priority order.
+
+Phase 1: Baseline audit (week 1)
+Build a prompt list. Write 20–50 questions your buyers would ask an AI,
+ e.g. "best GenAI consultants in Spain", 
+ "how to deploy a multi-agent system on Azure", 
+ "who can help with Kafka to KRaft migration".
+Test them across engines. 
+ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews. 
+Log whether you're mentioned, which competitors appear, which sources get cited, and whether facts about you are correct.
+Identify the cited sources. 
+The domains AI keeps citing for your topics are your real GEO targets. 
+Often they're not the sites that rank #1 on Google.
+
+Phase 2: Make existing content quotable (weeks 2–4)
+Add answer-first summaries.
+ Put a 2–3 sentence direct answer at the top of each key page, before the detail.
+Rewrite headings as questions that match your prompt list.
+Add quotable facts: concrete numbers, results, timelines, named methods. 
+"Reduced response time from 8s to 1.2s" gets cited; "improves performance" doesn't.
+Add FAQ and comparison blocks to service pages.
+Strengthen entity schema: Organization, Person (founder with credentials), Service, FAQPage, with sameAs links to LinkedIn, GitHub, Crunchbase, etc.
+Check robots.txt allows
+ GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot,
+  Google-Extended; optionally add an llms.txt summarizing who you are and your key pages.
+
+  Phase 3: Build off-site presence (ongoing, the biggest lever)
+Unify your brand description. One canonical paragraph (who, what, where, for whom) used identically on the website, LinkedIn, directories, bios and profiles.
+Get listed where AI looks: Clutch, G2, GoodFirms, industry directories, Crunchbase, Wikidata if eligible.
+Earn mentions in cited sources found in Phase 1: guest articles, interviews, podcasts, being quoted by journalists.
+Participate in communities LLMs weigh heavily: Reddit, Stack Overflow, GitHub, LinkedIn articles, Medium. Genuine expert answers, not promotion.
+Publish original material: benchmarks, surveys, open-source tools, case studies. Original data is the single most-cited content type.
+Get onto "best of" lists and comparison articles in your niche.
+
+Phase 4: Measure and iterate (monthly)
+Re-run the prompt list every month and track share of voice versus competitors.
+Correct wrong facts at the source. If AI gets something wrong, find where it came from (an old profile, outdated article) and fix it there.
+Track AI referral traffic in analytics (referrers like chatgpt.com, perplexity.ai).
+Refresh key pages with dates and new data every 2–3 months.
+
+Rough effort split
+Activity	Share of effort
+Off-site mentions and authority	~50%
+Content restructuring and original data	~30%
+Technical (schema, crawlers, llms.txt)	~10%
+Monitoring and correction	~10%
+
+The key mindset shift: SEO is mostly work on your own site; 
+GEO results come mostly from what the rest of the web says about you, 
+because that's what models learn from and retrieve.
+
