@@ -1,0 +1,46 @@
+# Runs on the EC2 server in /opt/geo
+# aws.env is written by the server's first-boot script (Terraform user_data).
+# app.env holds your own settings (domain etc.), see app.env.example.
+
+x-logging: &awslogs
+  driver: awslogs
+  options:
+    awslogs-region: ${AWS_REGION:-eu-south-2}
+    awslogs-group: /geo-pilot/app
+    awslogs-create-group: "false"
+
+services:
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    env_file: [app.env]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [api]
+    logging: *awslogs
+
+  api:
+    # FastAPI backend + dashboard
+    build: ./app
+    command: ["uvicorn", "geo.api:app", "--host", "0.0.0.0", "--port", "8000"]
+    restart: unless-stopped
+    env_file: [aws.env, app.env]
+    expose: ["8000"]
+    logging: *awslogs
+
+  worker:
+    # Long-polls SQS, runs prompts against the LLM engines, writes to RDS + S3
+    build: ./app
+    command: ["python", "-m", "geo.worker"]
+    restart: unless-stopped
+    env_file: [aws.env, app.env]
+    logging: *awslogs
+
+volumes:
+  caddy_data:
+  caddy_config:

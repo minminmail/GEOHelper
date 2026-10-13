@@ -1,0 +1,4 @@
+# Copy to terraform.tfvars and edit
+alert_email      = "you@example.com"
+region           = "eu-south-2"   # Spain
+budget_limit_usd = 60

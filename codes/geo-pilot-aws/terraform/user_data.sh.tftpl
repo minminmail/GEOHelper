@@ -1,0 +1,33 @@
+#!/bin/bash
+# First-boot setup for the GEO pilot server (Amazon Linux 2023, ARM64)
+set -euxo pipefail
+
+dnf update -y
+dnf install -y docker git postgresql16
+
+# Docker Compose v2 plugin
+mkdir -p /usr/local/lib/docker/cli-plugins
+curl -fsSL "https://github.com/docker/compose/releases/latest/download/docker-compose-linux-aarch64" \
+  -o /usr/local/lib/docker/cli-plugins/docker-compose
+chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+
+systemctl enable --now docker
+usermod -aG docker ec2-user
+
+# App folder and the AWS settings the containers need.
+# Secrets are NOT written here: the app reads them at runtime from
+# SSM Parameter Store and Secrets Manager using the instance role.
+mkdir -p /opt/geo
+cat > /opt/geo/aws.env <<'EOF'
+AWS_REGION=${region}
+AWS_DEFAULT_REGION=${region}
+GEO_NAME=${name}
+GEO_QUEUE_URL=${queue_url}
+GEO_BUCKET=${bucket}
+GEO_DB_HOST=${db_host}
+GEO_DB_NAME=${db_name}
+GEO_DB_SECRET_ARN=${db_secret}
+GEO_SSM_PREFIX=/${name}/
+GEO_LOG_GROUP=${log_group}
+EOF
+chown -R ec2-user:ec2-user /opt/geo
